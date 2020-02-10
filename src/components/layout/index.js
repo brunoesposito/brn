@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import Header from './header';
 import Footer from './footer';
 
-import { Container } from 'react-bootstrap';
 import { GlobalStyle } from '../style/global';
 
 const Layout = ({ children }) => {

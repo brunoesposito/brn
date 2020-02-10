@@ -14,6 +14,10 @@ const BoxHeader = styled.header`
     padding: .5rem !important;
     background: ${colors.black};
     z-index: 2;
+
+    button {
+        display: none;
+    }
     
     @media (min-width: 768px){
         display: flex;
@@ -26,6 +30,10 @@ const BoxHeader = styled.header`
         background: -webkit-linear-gradient(180deg, rgba(51,51,51,0.8) 0%, ${colors.black} 100%);
         background: linear-gradient(180deg, rgba(51,51,51,0.8) 0%, ${colors.black} 100%);
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="${colors.black}",endColorstr="${colors.black}",GradientType=1);
+
+        button {
+            display: block;
+        }
     }
 `;
 
