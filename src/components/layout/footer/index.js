@@ -1,12 +1,29 @@
 import React from 'react';
 
-import { author, year, platformName, platformUrl } from '../../metadata';
+import { useStaticQuery, graphql } from 'gatsby';
 import { BoxFooter } from './style';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsappSquare, faFacebookSquare, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 function Footer() {
+    const data = useStaticQuery(
+        graphql`
+            query {
+                site {
+                    siteMetadata {
+                        author,
+                        year,
+                        platform {
+                            name,
+                            url
+                        }
+                    }
+                }
+            }
+        `
+    );
+
     return (
         <BoxFooter id="footer">
             <ul className="list-inline">
@@ -27,7 +44,7 @@ function Footer() {
                 </li>
             </ul>
             <div className="bg-primary p-2 mt-2">
-                <p className="m-0">{author} © {year}, Built with <a href={platformUrl} title="Gatsby" className="text-white" rel="noopener noreferrer" target="_blank">{platformName}</a></p>
+                <p className="m-0">{data.site.siteMetadata.author} © {data.site.siteMetadata.year}, Built with <a href={data.site.siteMetadata.platform.url} title="Gatsby" className="text-white" rel="noopener noreferrer" target="_blank">{data.site.siteMetadata.platform.name}</a></p>
             </div>
         </BoxFooter>
     );
