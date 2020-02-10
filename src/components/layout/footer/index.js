@@ -4,7 +4,7 @@ import { author, year, platformName, platformUrl } from '../../metadata';
 import { BoxFooter } from './style';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faWhatsappSquare, faFacebookSquare, faLinkedin, faGithubSquare } from '@fortawesome/free-brands-svg-icons';
+import { faWhatsappSquare, faFacebookSquare, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 function Footer() {
     return (
@@ -23,11 +23,6 @@ function Footer() {
                 <li className="list-inline-item">
                     <a href="https://www.linkedin.com/in/brunoesposito/" target="_blank" rel="noopener noreferrer" className="text-white">
                         <FontAwesomeIcon icon={faLinkedin} size="2x" />
-                    </a>
-                </li>
-                <li className="list-inline-item">
-                    <a href="https://github.com/brunoesposito" target="_blank" rel="noopener noreferrer" className="text-white">
-                        <FontAwesomeIcon icon={faGithubSquare} size="2x" />
                     </a>
                 </li>
             </ul>
