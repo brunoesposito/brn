@@ -12,7 +12,7 @@ const Header = () => {
                 <Brand maxWidth="200">
                     <Image src="BRN.png" maxWidth="200" />
                 </Brand>
-                <h1 className="text-white mt-5 mb-4 text-center">Hi, I'm Bruno Aurichio Esposito.<br />A Full Stack Developer</h1>
+                <h1 className="text-white mt-5 mb-4">Hi, I'm Bruno Aurichio Esposito.<br />A Full Stack Developer</h1>
                 <button onClick={() => scrollTo('#footer')} className="btn btn-outline-primary">Contact me</button>
             </BoxHeader>
             <BoxVideo>

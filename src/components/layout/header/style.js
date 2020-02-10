@@ -9,22 +9,24 @@ const Brand = styled.div(props => ({
 }));
 
 const BoxHeader = styled.header`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    
     position: relative;
-    z-index: 2;
-
+    text-align: center;
     padding: .5rem !important;
-    height: 100vh;
-
     background: ${colors.black};
-    background: -moz-linear-gradient(180deg, rgba(51,51,51,0.8) 0%, ${colors.black} 100%);
-    background: -webkit-linear-gradient(180deg, rgba(51,51,51,0.8) 0%, ${colors.black} 100%);
-    background: linear-gradient(180deg, rgba(51,51,51,0.8) 0%, ${colors.black} 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="${colors.black}",endColorstr="${colors.black}",GradientType=1);
+    z-index: 2;
+    
+    @media (min-width: 768px){
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 100vh;
+
+        background: -moz-linear-gradient(180deg, rgba(51,51,51,0.8) 0%, ${colors.black} 100%);
+        background: -webkit-linear-gradient(180deg, rgba(51,51,51,0.8) 0%, ${colors.black} 100%);
+        background: linear-gradient(180deg, rgba(51,51,51,0.8) 0%, ${colors.black} 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="${colors.black}",endColorstr="${colors.black}",GradientType=1);
+    }
 `;
 
 const BoxVideo = styled.div`
@@ -33,11 +35,29 @@ const BoxVideo = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
+    overflow: hidden;
     z-index: 1;
 
     video {
-        max-width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
+        height: 100%;
+
+        @media (min-aspect-ratio: 16/9) {
+            height: 300%;
+            top: -100%;
+        }
+
+        @media (max-aspect-ratio: 16/9) {
+            width: 300%;
+            left: -100%;
+        }
+
+        @media (max-width: 767px) {
+            display: none;
+        }
     }
 `;
 

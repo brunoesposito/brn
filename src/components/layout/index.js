@@ -12,9 +12,7 @@ const Layout = ({ children }) => {
         <>
             <GlobalStyle />
             <Header />
-            <Container>
-                {children}
-            </Container>
+            {children}
             <Footer />
         </>
     );

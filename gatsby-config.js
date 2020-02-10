@@ -7,7 +7,8 @@ module.exports = {
         platform: {
             name: 'Gatsby',
             url: 'https://www.gatsbyjs.org'
-        }
+        },
+        siteUrl: `https://build-2fbf4f0e-8a26-49bb-a5ea-b65625e7cfcd.gtsb.io/`
     },
     plugins: [
         `gatsby-plugin-react-helmet`,
@@ -15,6 +16,8 @@ module.exports = {
         `gatsby-plugin-sharp`,
         // `gatsby-plugin-offline`,
         `gatsby-plugin-smoothscroll`,
+        'gatsby-plugin-robots-txt',
+        `gatsby-plugin-sitemap`,
         {
             resolve: `gatsby-source-filesystem`,
             options: {
@@ -45,7 +48,7 @@ module.exports = {
         {
             resolve: `gatsby-plugin-canonical-urls`,
             options: {
-                siteUrl: `https://www.example.com`,
+                siteUrl: `https://build-2fbf4f0e-8a26-49bb-a5ea-b65625e7cfcd.gtsb.io/`,
             },
         }
     ],
