@@ -4,14 +4,14 @@ import Helmet from 'react-helmet';
 
 import { title as siteTitle, description, author } from './metadata';
 
-function SEO({ lang, meta, title }) {
+function SEO({ lang, meta }) {
     return (
         <Helmet
             htmlAttributes={{
                 lang,
             }}
-            title={title}
-            titleTemplate={`%s | ${siteTitle}`}
+            title={siteTitle}
+            titleTemplate={siteTitle}
             meta={[
                 {
                     name: `description`,
@@ -19,7 +19,7 @@ function SEO({ lang, meta, title }) {
                 },
                 {
                     property: `og:title`,
-                    content: title,
+                    content: siteTitle,
                 },
                 {
                     property: `og:description`,
@@ -39,7 +39,7 @@ function SEO({ lang, meta, title }) {
                 },
                 {
                     name: `twitter:title`,
-                    content: title,
+                    content: siteTitle,
                 },
                 {
                     name: `twitter:description`,
