@@ -8,7 +8,7 @@ module.exports = {
             name: 'Gatsby',
             url: 'https://www.gatsbyjs.org'
         },
-        siteUrl: `https://build-2fbf4f0e-8a26-49bb-a5ea-b65625e7cfcd.gtsb.io/`
+        siteUrl: `https://brn.netlify.com/`
     },
     plugins: [
         `gatsby-plugin-react-helmet`,
@@ -16,8 +16,6 @@ module.exports = {
         `gatsby-plugin-sharp`,
         // `gatsby-plugin-offline`,
         `gatsby-plugin-smoothscroll`,
-        'gatsby-plugin-robots-txt',
-        `gatsby-plugin-sitemap`,
         {
             resolve: `gatsby-source-filesystem`,
             options: {
@@ -48,8 +46,45 @@ module.exports = {
         {
             resolve: `gatsby-plugin-canonical-urls`,
             options: {
-                siteUrl: `https://build-2fbf4f0e-8a26-49bb-a5ea-b65625e7cfcd.gtsb.io/`,
+                siteUrl: `https://brn.netlify.com/`,
             },
+        },
+        {
+            resolve: 'gatsby-plugin-robots-txt',
+            options: {
+                host: 'https://brn.netlify.com/',
+                sitemap: 'https://brn.netlify.com/sitemap.xml',
+                policy: [{ userAgent: '*', allow: '/' }]
+            }
+        },
+        {
+            resolve: `gatsby-plugin-sitemap`,
+            options: {
+                output: `/sitemap.xml`,
+                query: `
+                    {
+                    site {
+                        siteMetadata {
+                            siteUrl
+                        }
+                    }
+
+                    allSitePage {
+                        edges {
+                            node {
+                                path
+                            }
+                        }
+                    }
+                }`,
+                serialize: ({ site, allSitePage }) => allSitePage.edges.map(edge => {
+                    return {
+                        url: site.siteMetadata.siteUrl + edge.node.path,
+                        changefreq: `daily`,
+                        priority: 0.7,
+                    }
+                })
+            }
         }
     ],
 }
