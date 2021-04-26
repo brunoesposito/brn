@@ -25,9 +25,9 @@
     "react-helmet": "5.2.1"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-svg-core": "1.2.27",
-    "@fortawesome/free-brands-svg-icons": "5.12.1",
-    "@fortawesome/react-fontawesome": "0.1.8",
+    "@fortawesome/fontawesome-svg-core": "1.2.35",
+    "@fortawesome/free-brands-svg-icons": "5.15.3",
+    "@fortawesome/react-fontawesome": "0.1.14",
     "bootstrap": "4.4.1",
     "prettier": "1.19.1",
     "react-bootstrap": "1.0.0-beta.16",
