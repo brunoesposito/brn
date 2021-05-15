@@ -12,7 +12,7 @@
     "gatsby-plugin-manifest": "2.2.39",
     "gatsby-plugin-offline": "3.0.32",
     "gatsby-plugin-react-helmet": "3.1.21",
-    "gatsby-plugin-robots-txt": "1.5.0",
+    "gatsby-plugin-robots-txt": "1.6.2",
     "gatsby-plugin-sharp": "2.4.5",
     "gatsby-plugin-sitemap": "2.2.27",
     "gatsby-plugin-smoothscroll": "1.0.4",
